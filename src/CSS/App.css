@@ -10,7 +10,6 @@
 }
 
 *{
-    background-color: var(--grey);
     box-sizing: border-box;
     padding: 0;
     font-family: 'Figtree', sans-serif;

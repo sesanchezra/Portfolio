@@ -125,14 +125,18 @@
     width: 50px;
     height: 50px;
     border-radius: 15px;
-    display: flex;
+    /* display: flex; */
+    display: none;
     justify-content: center;
     align-items: center;
-    display:none;
     border: none;
     color: var(--dark);
     font-size: 30px;
     transition: color 0.6s ease-in-out;
+    position: absolute;
+    right: 0;
+    
+
 }
 
 .menu__button__true {
@@ -162,6 +166,7 @@
 @media screen and (max-width:1000px){
     .Header__navbar{
         justify-content: space-between;
+        z-index: 4;
     }
 
     .menu__button__false{
@@ -196,7 +201,7 @@
     }
 
     .Header__navbar__menu__false{
-        display: none;
+        visibility: hidden;
     }
 
     .Header__navbar__menu__true{
@@ -204,10 +209,14 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        visibility: visible;
         position: absolute;
         top: 8vh;
         height: 86vh;
         width: 100%;
+        background-color: var(--light-blue);
+        transition: height 0.8s ease-in-out;
+        z-index: -1;
     }
 
     .Header__navbar__menu__true ul{
@@ -218,26 +227,44 @@
         list-style: none;
         align-items: center;
         position: relative;
+        top: 6%;
         margin: 0;
         padding: 0;
         justify-content: space-around;
-        
+        background-color: var(--light-blue);
+        transition:  0.8s ease-in-out;
+    }
+
+    .Header__navbar__menu__true ul a{
+        background-color: var(--light-blue);
+        color: white;
     }
 
     .Header__navbar__action__true {
         /* border: 1px solid green; */
+        visibility: visible;
         position: absolute;
-        bottom: -60vh;
+        bottom: -65vh;
         left: 40%;
         width: 20%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: var(--light-blue);
+        transition: bottom 0.8s ease-in-out;
+        z-index: -1;
     }
 
     .Header__navbar__action__false{
-        display: none;
+        visibility: hidden;
+        position: absolute;
+        bottom: 50vh;
+    }
+    .Header__button__true , .Header__button__false{
+        background-color: white;
+        color: var(--blue);
+        font-weight: 800;
     }
     
 }
