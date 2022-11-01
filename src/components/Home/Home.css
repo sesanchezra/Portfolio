@@ -1,4 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+    --grey: rgb(241, 244, 246);
+    --light-grey: rgb(243, 245, 248);
+    --light-dark: rgb(50, 60, 66);
+    --dark: rgb(70, 81, 87);
+    --font: rgb(126, 132, 136);
+    --blue: rgb(16, 143, 228);
+    --light-blue: rgb(58, 162, 232);
+}
+
+
 .Home{
     width: 100vw;
     min-height: 86vh;
+}
+
+.Home__description{
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+}
+
+.Home__description__header{
+    border: 1px solid red;
+    width: 70%;
+}
+
+.Home__description__header h2{
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--dark);
+}
+
+.Home__description__header h4{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--dark);
 }
