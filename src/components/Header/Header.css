@@ -216,7 +216,7 @@
         width: 100%;
         background-color: var(--light-blue);
         transition: height 0.8s ease-in-out;
-        z-index: -1;
+        z-index: 4;
     }
 
     .Header__navbar__menu__true ul{
@@ -253,7 +253,7 @@
         align-items: center;
         /* background-color: var(--light-blue); */
         transition: bottom 0.8s ease-in-out;
-        z-index: -1;
+        z-index: 4;
     }
 
     .Header__navbar__action__false{

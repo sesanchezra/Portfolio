@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
 :root{
     --grey: rgb(241, 244, 246);
     --light-grey: rgb(243, 245, 248);
@@ -13,27 +13,92 @@
 .Home{
     width: 100vw;
     min-height: 86vh;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .Home__description{
-    border: 1px solid green;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid green; */
+    margin-top: 35%;
+    width: 100%;
 }
 
 .Home__description__header{
-    border: 1px solid red;
     width: 70%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.Home__description__content{
+    width:70%;
 }
 
 .Home__description__header h2{
     font-size: 50px;
     font-weight: 900;
     color: var(--dark);
+    position: relative;
+    text-shadow: 2px 2px 0px white, 2.5px 2.5px 0px rgb(70, 81, 87,0.3);
+    z-index: -1;
 }
 
-.Home__description__header h4{
-    font-size: 30px;
-    font-weight: 600;
+.Home__description__header h5{
+    font-size: 20px;
+    font-weight: 800;
     color: var(--dark);
+    margin: 0;
+}
+
+.Home__img{
+    /* border: 1px solid blue; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 6vh;
+}
+
+.Home__img img{
+    object-fit: contain;
+    width: 80%;
+}
+
+
+
+
+
+@media screen and (max-width:400px){
+    .Home__description__header h2{
+        font-size: 40px;
+        text-shadow: 1px 1px 0px white, 2px 2px 0px rgb(70, 81, 87,0.3);
+    }
+
+    .Home__description__header h5{
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width:600px){
+    .Home__description{
+        justify-content: space-evenly;
+        width: 50%;
+    }
+
+    .Home__description__header{
+        align-items: flex-start;
+    }
+}
+@media screen and (max-width:1000px){
+
 }
