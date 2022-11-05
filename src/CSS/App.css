@@ -7,12 +7,15 @@
     --font: rgb(126, 132, 136);
     --blue: rgb(16, 143, 228);
     --light-blue: rgb(58, 162, 232);
+    --header-index: 10;
 }
 
 *{
-    
     box-sizing: border-box;
     padding: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+body{
+    background-color: var(--grey);
+}

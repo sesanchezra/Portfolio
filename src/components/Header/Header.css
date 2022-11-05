@@ -6,6 +6,7 @@
     --font: rgb(126, 132, 136);
     --blue: rgb(16, 143, 228);
     --light-blue: rgb(58, 162, 232);
+    --header-index: 10;
 }
 
 .Header{
@@ -14,6 +15,7 @@
     /* border:1px solid blue; */
     position: sticky;
     top:0;
+    z-index: var(--header-index);
 }
 
 .Header__navbar{
