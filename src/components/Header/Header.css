@@ -216,7 +216,7 @@
         top: 8vh;
         height: 86vh;
         width: 100%;
-        background-color: var(--light-blue);
+        background-color: var(--grey);
         transition: height 0.8s ease-in-out;
         z-index: 4;
     }
@@ -233,13 +233,13 @@
         margin: 0;
         padding: 0;
         justify-content: space-around;
-        /* background-color: var(--light-blue); */
+        background: transparent;
         transition:  0.8s ease-in-out;
     }
 
     .Header__navbar__menu__true ul a{
         /* background-color: var(--light-blue); */
-        color: white;
+        color: var(--font);
     }
 
     .Header__navbar__action__true {
@@ -264,8 +264,8 @@
         bottom: 50vh;
     }
     .Header__button__true , .Header__button__false{
-        background-color: white;
-        color: var(--blue);
+        background-color: var(--blue);
+        color: white;
         font-weight: 800;
     }
     

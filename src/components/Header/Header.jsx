@@ -23,10 +23,10 @@ const Header = () => {
     console.log(collapseMenu)
     return (
         <div className='Header'>
-            <nav className='Header__navbar'>
-                <div className='Header__navbar__logo'>
+            <nav className='Header__navbar' >
+                <a className='Header__navbar__logo' href='#'>
                     <img src={Logo} alt="Logo" />
-                </div>
+                </a>
                 <IconContext.Provider value={{  className: "global-class-name"}}>
                     <button className={`menu__button__${collapseMenu}`} onClick={toggleMenu}>
                         <HiMenuAlt3 />
