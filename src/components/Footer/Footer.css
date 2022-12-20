@@ -1,7 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+:root{
+    --grey: rgb(241, 244, 246);
+    --light-grey: rgb(243, 245, 248);
+    --light-dark: rgb(50, 60, 66);
+    --dark: rgb(70, 81, 87);
+    --font: rgb(126, 132, 136);
+    --blue: rgb(16, 143, 228);
+    --light-blue: rgb(58, 162, 232);
+    --header-index: 10;
+}
+
+
 .Footer{
     width: 100vw;
     height: 6vh;
-    border: 1px solid green;
     position: fixed;
     bottom: 0;
+    background-color: var(--grey);
+    z-index: var(--header-index);
 }
