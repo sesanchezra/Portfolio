@@ -76,10 +76,10 @@
 
 .Home__img img{
     object-fit: contain;
-    width: 400px;
+    width: 450px;
     z-index: calc(var(--header-index)-2);
     position: fixed;
-    bottom: 6vh;
+    bottom: 0;
 }
 
 .Home__img .background-1{

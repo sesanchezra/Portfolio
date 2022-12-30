@@ -214,7 +214,7 @@
         visibility: visible;
         position: absolute;
         top: 8vh;
-        height: 86vh;
+        height: 100vh;
         width: 100%;
         background-color: var(--grey);
         transition: height 0.8s ease-in-out;
@@ -246,7 +246,7 @@
         /* border: 1px solid green; */
         visibility: visible;
         position: absolute;
-        bottom: -65vh;
+        bottom: -75vh;
         left: 40%;
         width: 20%;
         height: 100%;

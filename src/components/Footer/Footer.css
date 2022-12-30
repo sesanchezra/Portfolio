@@ -12,10 +12,39 @@
 
 
 .Footer{
-    width: 100vw;
-    height: 6vh;
+    width: auto;
+    height: 8vh;
     position: fixed;
     bottom: 0;
     background-color: var(--grey);
     z-index: var(--header-index);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-left: 5%;
+}
+
+.Footer__button{
+    border: none;
+    background: none;
+    background-color: var(--blue);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer__button > svg{
+    fill: white;
+}
+
+@media screen and (max-width:562px){
+    .Footer__button{
+        width: 45px;
+        height: 45px;
+        border-radius: 22.5px;
+    }
 }
