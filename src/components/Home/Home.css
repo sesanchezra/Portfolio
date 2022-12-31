@@ -27,8 +27,9 @@
     align-items: center;
     flex-direction: column;
     /* border: 1px solid green; */
-    margin-top: 20%;
+    margin-top: 30%;
     width: 100%;
+    position: absolute;
 }
 
 .Home__description__header{

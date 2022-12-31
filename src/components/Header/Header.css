@@ -121,6 +121,7 @@
     color: white;
     font-size: 14px;
     font-weight: 500;
+    box-shadow: -10px 10px 20px 0px rgb(58, 162, 232,0.5);
 }
 
 .menu__button__false {

@@ -16,7 +16,7 @@
     height: 8vh;
     position: fixed;
     bottom: 0;
-    background-color: var(--grey);
+    background-color: transparent;
     z-index: var(--header-index);
     display: flex;
     justify-content: flex-start;
@@ -35,10 +35,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: -10px 10px 20px 0px rgb(58, 162, 232,0.3);
 }
 
 .Footer__button > svg{
     fill: white;
+}
+
+.email{
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    stroke-linejoin: round;
+    stroke-miterlimit: 2;
+    width: 32px;
 }
 
 @media screen and (max-width:562px){
