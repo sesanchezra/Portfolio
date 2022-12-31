@@ -26,7 +26,7 @@ const Home = () => {
                 <div className='background-2'></div>
                 <img src={Profile} alt="profile" />
             </div>
-            <div className='Home__works'>
+            {/* <div className='Home__works'>
                 <div className='Home__works__item'>
                     <div className='gif'>
                         <iframe src={Developer} frameborder="0" scrolling='no' ></iframe>
@@ -65,7 +65,7 @@ const Home = () => {
                     </div>
 
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
