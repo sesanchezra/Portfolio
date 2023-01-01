@@ -16,6 +16,7 @@
     position: sticky;
     top:0;
     z-index: var(--header-index);
+    background-color: var(--grey);
 }
 
 .Header__navbar{

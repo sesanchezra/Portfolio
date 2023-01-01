@@ -17,7 +17,7 @@
     position: fixed;
     bottom: 0;
     background-color: transparent;
-    z-index: var(--header-index);
+    z-index: calc(var(--header-index)-2);
     display: flex;
     justify-content: flex-start;
     align-items: center;

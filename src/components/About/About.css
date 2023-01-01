@@ -10,6 +10,16 @@
     --header-index: 10;
 }
 
+.About{
+    z-index: calc(var(--header-index)-1);
+    scroll-behavior:smooth;
+}
+
+.About__first{
+    height: 92vh;
+    border: 1px solid red;
+}
+
 .About__title{
     width: 100%;
     display: flex;
@@ -33,12 +43,14 @@
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+    position: relative;
 }
 
 .About__img .Round__frame{
     width: 300px;
     height: 300px;
     border-radius: 150px;
+    position: relative;
 }
 
 .About__img .Round__frame .background-1{
@@ -48,7 +60,7 @@
     opacity: 0.8;
     content: '';
     background-color: rgb(247, 250, 253,0.4);
-    position:fixed;
+    position:absolute;
     /* top: 50%; */
     z-index: calc(var(--header-index)-3);
     border: 4px solid rgb(255,255,255,0.3);
@@ -75,4 +87,32 @@
     border-radius: 150px;
     position: relative;
     z-index: calc(var(--header-index)-2);
+}
+
+.About__description{
+    padding-left: 7%;
+    padding-right: 7%;
+    margin-top: 20px;
+}
+
+.About__description .About__bio h5{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.About__description .About__bio p{
+    color: rgb(163,165,165);
+    text-align: start;
+    margin-top: 20px;
+}
+
+.About__experience{
+    height: 100vh;
+    border: 1px solid red;
+}
+
+.About__second{
+    height: 92vh;
+    border: 1px solid blue;
 }
