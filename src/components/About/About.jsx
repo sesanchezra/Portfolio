@@ -3,10 +3,10 @@ import './About.css'
 import Profile from '../../assets/Profile.png'
 
 const about = () => {
-    const scrollDown = (e)=>{
+    const scrollDown = (e) => {
         e.preventDefault()
-        window.scroll(0,2000)
-        
+        window.scroll(0, 2000)
+
     }
 
     return (
@@ -34,8 +34,10 @@ const about = () => {
                         </p>
                     </div>
                 </div>
-                <button onClick={scrollDown}>
-                    Scroll
+                <button onClick={scrollDown} className='arrows__button'>
+                    <div className='arrow-1'></div>
+                    <div className='arrow-2'></div>
+                    <div className='arrow-3'></div>
                 </button>
             </div>
 
