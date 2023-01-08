@@ -130,11 +130,11 @@
 }
 
 .arrow-1, .arrow-2 ,.arrow-3{
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     transform: rotate(135deg);
     border-color: var(--blue);
-    border-width: 0.5vmin 0.5vmin 0 0;
+    border-width: 0.25vmin 0.25vmin 0 0;
     border-style: solid;
 }
 
@@ -159,7 +159,7 @@
 }
 
 .arrow-2{
-    border-width: 0.8vmin 0.8vmin 0 0;
+    border-width: 0.4vmin 0.4vmin 0 0;
     animation-name: slide2;
     animation-duration: 1.5s;
     animation-iteration-count: infinite ;
@@ -181,7 +181,7 @@
 
 
 .arrow-3{
-    border-width: 1.2vmin 1.2vmin 0 0;
+    border-width: 0.6vmin 0.6vmin 0 0;
     animation-name: slide2;
     animation-duration: 1.5s;
     animation-iteration-count: infinite ;
@@ -192,7 +192,7 @@
 
 
 .arrows__button:hover .arrow-2 , .arrows__button:focus .arrow-2{
-    transform: translate(0,-30px) rotate(135deg) ;
+    transform: translate(0,-15px) rotate(135deg) ;
     transition: all 0.4s ease;
     
 }
@@ -200,7 +200,7 @@
 
 
 .arrows__button:hover .arrow-3 , .arrows__button:focus .arrow-3{
-    transform: translate(0,-60px) rotate(135deg) ;
+    transform: translate(0,-30px) rotate(135deg) ;
     transition: all 0.4s ease;
     
 }
