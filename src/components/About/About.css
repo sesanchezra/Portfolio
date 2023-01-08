@@ -118,6 +118,9 @@
 
 
 /* Arrow buttons*/
+
+
+
 .arrows__button{
     background-color: transparent;
     border: none;
@@ -135,18 +138,63 @@
     border-style: solid;
 }
 
+.arrow-1{
+  animation-name: slide1;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite ;
+    animation-timing-function: ease-in-out;
+    position: relative;
+}
+
+@keyframes slide1{
+  0%{
+    top: 0px;
+  }
+  50%{
+    top: 6px;
+  }
+  100%{
+    top: 0px;
+  }
+}
+
 .arrow-2{
-    transform: translate(0,-8px) rotate(135deg) ;
     border-width: 0.8vmin 0.8vmin 0 0;
+    animation-name: slide2;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite ;
+    animation-timing-function: ease-in-out;
+    position: relative;
 }
+
+@keyframes slide2{
+  0%{
+    top: 0px;
+  }
+  50%{
+    top: 6px;
+  }
+  100%{
+    top: 0px;
+  }
+}
+
+
 .arrow-3{
-    transform: translate(0,-15px) rotate(135deg) ;
     border-width: 1.2vmin 1.2vmin 0 0;
+    animation-name: slide2;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite ;
+    animation-timing-function: ease-in-out;
+    position:relative;
 }
+
+
 
 .arrows__button:hover .arrow-2 , .arrows__button:focus .arrow-2{
     transform: translate(0,-30px) rotate(135deg) ;
     transition: all 0.4s ease;
+    
 }
 
 
@@ -154,6 +202,7 @@
 .arrows__button:hover .arrow-3 , .arrows__button:focus .arrow-3{
     transform: translate(0,-60px) rotate(135deg) ;
     transition: all 0.4s ease;
+    
 }
 
 .divider{
