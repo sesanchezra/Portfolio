@@ -5,6 +5,7 @@ import Developer from '../../assets/developer.gif'
 import Leadership from '../../assets/coach.gif'
 import Scrum from '../../assets/friendship.gif'
 
+
 const Home = () => {
     return (
         <div className='Home'>

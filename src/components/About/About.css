@@ -23,6 +23,13 @@
   flex-direction: column;
 }
 
+.About__first .content{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .About__title {
   width: 100%;
   display: flex;
