@@ -21,14 +21,9 @@
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
-.About__first .content{
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 
 .About__title {
   width: 100%;
@@ -124,6 +119,8 @@
 .arrows__button{
     background-color: transparent;
     border: none;
+    position: sticky;
+    bottom: 5%;
 }
 
 .arrow-1, .arrow-2 ,.arrow-3{
