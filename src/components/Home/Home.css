@@ -48,6 +48,7 @@
 
 .Home__description__content p{
     text-align: center;
+    color: var(--font);
 }
 
 .Home__description__header h2{

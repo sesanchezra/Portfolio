@@ -28,7 +28,6 @@
   position: relative;
 }
 
-
 .About__title {
   width: 100%;
   display: flex;
@@ -110,105 +109,99 @@
 }
 
 .About__description .About__bio p {
-  color: rgb(163, 165, 165);
+  /* color: rgb(163, 165, 165); */
+  color: var(--font);
   text-align: start;
   margin-top: 20px;
 }
 
-
-
 /* Arrow buttons*/
 
-
-
-.arrows__button{
-    background-color: transparent;
-    border: none;
-    position: sticky;
-    bottom: 5%;
-    opacity: 0.7;
+.arrows__button {
+  background-color: transparent;
+  border: none;
+  position: sticky;
+  bottom: 5%;
+  opacity: 0.7;
 }
 
-.arrow-1, .arrow-2 ,.arrow-3{
-    width: 19.5px;
-    height: 19.5px;
-    transform: rotate(135deg);
-    border-color: var(--blue);
-    border-width: 0.325vmin 0.325vmin 0 0;
-    border-style: solid;
+.arrow-1,
+.arrow-2,
+.arrow-3 {
+  width: 19.5px;
+  height: 19.5px;
+  transform: rotate(135deg);
+  border-color: var(--blue);
+  border-width: 0.325vmin 0.325vmin 0 0;
+  border-style: solid;
 }
 
-.arrow-1{
+.arrow-1 {
   animation-name: slide1;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite ;
-    animation-timing-function: ease-in-out;
-    position: relative;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: relative;
 }
 
-@keyframes slide1{
-  0%{
+@keyframes slide1 {
+  0% {
     top: 0px;
   }
-  50%{
+  50% {
     top: 6px;
   }
-  100%{
+  100% {
     top: 0px;
   }
 }
 
-.arrow-2{
-    border-width: 0.512vmin 0.512vmin 0 0;
-    animation-name: slide2;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite ;
-    animation-timing-function: ease-in-out;
-    position: relative;
+.arrow-2 {
+  border-width: 0.512vmin 0.512vmin 0 0;
+  animation-name: slide2;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: relative;
 }
 
-@keyframes slide2{
-  0%{
+@keyframes slide2 {
+  0% {
     top: 0px;
   }
-  50%{
+  50% {
     top: 6px;
   }
-  100%{
+  100% {
     top: 0px;
   }
 }
 
-
-.arrow-3{
-    border-width: 0.78vmin 0.78vmin 0 0;
-    animation-name: slide2;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite ;
-    animation-timing-function: ease-in-out;
-    position:relative;
+.arrow-3 {
+  border-width: 0.78vmin 0.78vmin 0 0;
+  animation-name: slide2;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  position: relative;
 }
 
-
-
-.arrows__button:hover .arrow-2 , .arrows__button:focus .arrow-2{
-    transform: translate(0,-19.5px) rotate(135deg) ;
-    transition: all 0.4s ease;
-    
+.arrows__button:hover .arrow-2,
+.arrows__button:focus .arrow-2 {
+  transform: translate(0, -19.5px) rotate(135deg);
+  transition: all 0.4s ease;
 }
 
-
-
-.arrows__button:hover .arrow-3 , .arrows__button:focus .arrow-3{
-    transform: translate(0,-39px) rotate(135deg) ;
-    transition: all 0.4s ease;
-    
+.arrows__button:hover .arrow-3,
+.arrows__button:focus .arrow-3 {
+  transform: translate(0, -39px) rotate(135deg);
+  transition: all 0.4s ease;
 }
 
-.divider{
+.divider {
   width: 80%;
   height: 2px;
-  content: '';
+  content: "";
   background-color: var(--dark);
   border-radius: 1px;
   opacity: 0.5;
@@ -228,23 +221,22 @@
   font-size: 20px;
   font-weight: 800;
   color: var(--dark);
+  text-align: center;
 }
 
-.experience__container{
+.experience__container {
   width: 85vw;
   background-color: white;
   border-radius: 15px;
-  box-shadow:
-  4.5px 4.3px 4.8px rgba(0, 0, 0, 0.017),
-  11.6px 11px 11.4px rgba(0, 0, 0, 0.029),
-  23.7px 22.6px 23px rgba(0, 0, 0, 0.04),
-  49px 46.7px 50.4px rgba(0, 0, 0, 0.052),
-  131px 125px 154px rgba(0, 0, 0, 0.07)
-;
+  box-shadow: 4.5px 4.3px 4.8px rgba(0, 0, 0, 0.017),
+    11.6px 11px 11.4px rgba(0, 0, 0, 0.029),
+    23.7px 22.6px 23px rgba(0, 0, 0, 0.04),
+    49px 46.7px 50.4px rgba(0, 0, 0, 0.052),
+    131px 125px 154px rgba(0, 0, 0, 0.07);
   margin-top: 40px;
 }
 
-.experience__container .content{
+.experience__container .content {
   padding: 10px;
   padding-top: 15px;
   display: flex;
@@ -252,16 +244,94 @@
   align-items: center;
 }
 
-.experience__container .content .divider{
+.experience__container .content .divider {
   width: 95%;
   height: 2px;
-  content: '';
+  content: "";
   background-color: var(--dark);
   border-radius: 1px;
   opacity: 0.07;
 }
 
-.experience__container .content .Header{
+/* --- Skills carrousel ----*/
+.skills {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.skills h6 {
+  color: var(--blue);
+}
+
+/* .styles-module_sliderBase__swkx1{
+  background-color: blue;
+} */
+
+.styles-module_sliderBase__swkx1 > div[data-arrow="right"],
+.styles-module_sliderBase__swkx1 > div[data-arrow="left"] {
+  bottom: 0;
+  height: 42px;
+  margin-bottom: auto;
+  margin-top: auto;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.styles-module_sliderBase__swkx1 > div[data-arrow="right"] {
+  background: linear-gradient(270deg, #fff 1%, hsla(0, 0%, 100%, 0));
+  right: 0;
+  
+}
+
+.styles-module_sliderBase__swkx1 > div[data-arrow="left"] {
+  background: linear-gradient(90deg, #fff 1%, hsla(0, 0%, 100%, 0));
+  left: 0;
+}
+
+.styles-module_sliderBase__swkx1 > div[data-arrow="right"] > button {
+  width:50%;
+  height: 60%;
+  position: absolute;
+  right: -10px;
+  border: none;
+  background: url(https://cdn.dsmcdn.com/web/production/slick-arrow.svg) no-repeat;
+  background-size: contain;
+  transform:scale(.5);
+}
+
+.styles-module_sliderBase__swkx1 > div[data-arrow="left"] > button {
+  width:50%;
+  height: 60%;
+  position: absolute;
+  left: -10px;
+  border: none;
+  background: url(https://cdn.dsmcdn.com/web/production/slick-arrow.svg)50% no-repeat;
+  background-size: contain;
+  transform: rotate(180deg) scale(.5);
+  
+}
+
+.skills__button {
+  background-color: rgb(233, 240, 255, 0.8);
+  border: none;
+  border-radius: 8px;
+  padding: 4px 7px 4px 7px;
+  color: var(--blue);
+  height: 40px;
+  margin-right: 15px;
+}
+
+.experience__container .content .Header {
   width: 100%;
   background-color: transparent;
   display: flex;
@@ -269,35 +339,36 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 5%;
+  z-index: calc(var(--header-index)-3);
 }
 
-.experience__container .content .Header .Header__description{
+.experience__container .content .Header .Header__description {
   width: 70%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
 }
 
-.experience__container .content .Header .Header__description h5{
+.experience__container .content .Header .Header__description h5 {
   color: var(--dark);
   font-weight: 800;
   margin-right: 2%;
   margin-bottom: 0;
 }
 
-.experience__container .content .Header .Header__description span{
+.experience__container .content .Header .Header__description span {
   font-size: 16px;
   color: var(--font);
   margin-top: 1%;
 }
 
-.experience__container .content .Header .experience__img{
+.experience__container .content .Header .experience__img {
   width: 70px;
   height: 70px;
   margin-left: 2%;
 }
 
-.experience__container .content .Header .experience__img img{
+.experience__container .content .Header .experience__img img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -307,18 +378,53 @@
   width: 100%;
   background-color: transparent;
   margin-top: 3%;
+  position: relative;
 }
 
-.experience__container .content .description h6{
+.experience__container .content .description h6 {
   color: var(--dark);
   font-weight: 800;
   margin-left: 2%;
 }
 
-.experience__container .content .description h6 span{
+.experience__container .content .description h6 span {
   color: var(--blue);
 }
 
-.experience__container .content .description p{
+.experience__container .content .description p {
   margin-left: 2%;
+  /* color: rgb(163, 165, 165); */
+  color: var(--font);
+  text-align: start;
+}
+
+.expand__button {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  background-color: var(--grey);
+  border: 1px solid var(--blue);
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue);
+}
+.expand__button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.experience__container .content .description .hide {
+  height: 0px;
+}
+
+.experience__container .content .description .hide p {
+  visibility: hidden;
+}
+
+.experience__container .content .description .show {
+  height: auto;
 }

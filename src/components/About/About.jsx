@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './About.css'
 import Profile from '../../assets/Profile.png'
 import NoCountry from '../../assets/NoCountry.png'
+import { MdExpandMore, MdExpandLess } from "react-icons/md";
+import { ScrollingCarousel } from '@trendyol-js/react-carousel';
+
+const skillsNoCountry = [
+    'HTML5',
+    'CSS',
+    'Javascript',
+    'React.js',
+    'API Rest',
+    'Leadership',
+    'Communication Skills',
+    'Customer development',
+    'Project Management',
+    'Scrum Methodologies',
+    'Design Thinking',
+    'Bootstrap'
+]
+
 
 const about = () => {
     const scrollDown = (e) => {
@@ -9,6 +27,14 @@ const about = () => {
         window.scroll(0, 2000)
 
     }
+
+    const [isHide, setIsHide] = useState(true)
+
+    const toggleHide = () => {
+        setIsHide(!isHide)
+    }
+
+
 
     return (
         <div className='About'>
@@ -59,12 +85,30 @@ const about = () => {
                                 <div className='Header__description'>
                                     <h5>
                                         Frontend Developer & Team Leader
-
                                     </h5>
                                     <span>
                                         October 2022 - Present
                                     </span>
                                 </div>
+
+                            </div>
+                            <div className='divider'></div>
+                            <div className='skills'>
+                                <h6>
+                                    Skills
+                                </h6>
+                                    <ScrollingCarousel>
+                                        {
+                                            skillsNoCountry?.map(skill => (
+                                                <button className='skills__button'>
+                                                    {
+                                                        skill
+                                                    }
+                                                </button>
+                                            ))
+                                        }
+                                    </ScrollingCarousel>
+
 
                             </div>
                             <div className='divider'></div>
@@ -75,12 +119,22 @@ const about = () => {
                                 <p>
                                     Im developing web applications with technologies such as React.js, Redux.js, bootstrap, javascript; I have integrated APIs to the frontend with Axios.
                                 </p>
-                                <div>
-                                    <button></button>
+
+                                <button onClick={toggleHide} className='expand__button'>
+                                    {
+                                        isHide ?
+                                            <MdExpandMore />
+                                            :
+                                            <MdExpandLess />
+                                    }
+
+                                </button>
+
+                                <div className={`${isHide ? 'hide' : 'show'}`}>
+                                    <p >
+                                        In addition to being a developer, I had the opportunity to lead a development team. This opportunity allowed me to reinforce and enhance soft skills such as accurate communication, leadership, time and team management, among many others.
+                                    </p>
                                 </div>
-                                <p className='hide'>
-                                    In addition to being a developer, I had the opportunity to lead a development team. This opportunity allowed me to reinforce and enhance soft skills such as accurate communication, leadership, time and team management, among many others.
-                                </p>
                             </div>
 
 
