@@ -210,11 +210,20 @@
 /* ----- About Second ----- */
 
 .About__second {
-  height: 92vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.About__experience{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-bottom: 30%;
 }
 
 .About__experience h4 {
@@ -242,6 +251,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .experience__container .content .divider {

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './About.css'
 import Profile from '../../assets/Profile.png'
 import NoCountry from '../../assets/NoCountry.png'
+import IDforIdeas from '../../assets/ID.png'
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 import { ScrollingCarousel } from '@trendyol-js/react-carousel';
 
@@ -24,14 +25,18 @@ const skillsNoCountry = [
 const about = () => {
     const scrollDown = (e) => {
         e.preventDefault()
-        window.scroll(0, 2000)
+        window.scroll(0, 800)
 
     }
 
-    const [isHide, setIsHide] = useState(true)
+    const [isHideCountry, setIsHideCountry] = useState(true)
+    const [isHideId, setIsHideId] = useState(true)
 
-    const toggleHide = () => {
-        setIsHide(!isHide)
+    const toggleHideCountry = () => {
+        setIsHideCountry(!isHideCountry)
+    }
+    const toggleHideId = () => {
+        setIsHideId(!isHideId)
     }
 
 
@@ -97,17 +102,17 @@ const about = () => {
                                 <h6>
                                     Skills
                                 </h6>
-                                    <ScrollingCarousel>
-                                        {
-                                            skillsNoCountry?.map(skill => (
-                                                <button className='skills__button'>
-                                                    {
-                                                        skill
-                                                    }
-                                                </button>
-                                            ))
-                                        }
-                                    </ScrollingCarousel>
+                                <ScrollingCarousel>
+                                    {
+                                        skillsNoCountry?.map(skill => (
+                                            <button className='skills__button'>
+                                                {
+                                                    skill
+                                                }
+                                            </button>
+                                        ))
+                                    }
+                                </ScrollingCarousel>
 
 
                             </div>
@@ -120,9 +125,9 @@ const about = () => {
                                     Im developing web applications with technologies such as React.js, Redux.js, bootstrap, javascript; I have integrated APIs to the frontend with Axios.
                                 </p>
 
-                                <button onClick={toggleHide} className='expand__button'>
+                                <button onClick={toggleHideCountry} className='expand__button'>
                                     {
-                                        isHide ?
+                                        isHideCountry ?
                                             <MdExpandMore />
                                             :
                                             <MdExpandLess />
@@ -130,7 +135,7 @@ const about = () => {
 
                                 </button>
 
-                                <div className={`${isHide ? 'hide' : 'show'}`}>
+                                <div className={`${isHideCountry ? 'hide' : 'show'}`}>
                                     <p >
                                         In addition to being a developer, I had the opportunity to lead a development team. This opportunity allowed me to reinforce and enhance soft skills such as accurate communication, leadership, time and team management, among many others.
                                     </p>
@@ -142,6 +147,71 @@ const about = () => {
 
 
                     </div>
+
+                    <div className='experience__container'>
+                        <div className='content'>
+                            <div className='Header'>
+                                <div className='experience__img'>
+                                    <img src={IDforIdeas} alt="IDforIdeas" />
+                                </div>
+                                <div className='Header__description'>
+                                    <h5>
+                                        Frontend Developer
+                                    </h5>
+                                    <span>
+                                        September 2022 - Present
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div className='divider'></div>
+                            <div className='skills'>
+                                <h6>
+                                    Skills
+                                </h6>
+                                <ScrollingCarousel>
+                                    {
+                                        skillsNoCountry?.map(skill => (
+                                            <button className='skills__button'>
+                                                {
+                                                    skill
+                                                }
+                                            </button>
+                                        ))
+                                    }
+                                </ScrollingCarousel>
+                            </div>
+                            <div className='divider'></div>
+                            <div className='description'>
+                                <h6>
+                                    <span>ID for Ideas</span>
+                                </h6>
+                                <p>
+                                    I had the opportunity to directly build all the requirements of the application; using innovation methodologies that allowed me to better understand the needs of clients
+                                </p>
+                                <button onClick={toggleHideId} className='expand__button'>
+                                {
+                                    isHideId ?
+                                        <MdExpandMore />
+                                        :
+                                        <MdExpandLess />
+                                }
+                            </button>
+
+                            <div className={`${isHideId ? 'hide' : 'show'}`}>
+                                <p >
+                                Being my first challenge as a team leader, I had to develop soft skills that would allow me to efficiently coordinate the entire work team; This is why I took on the challenge of learning new project management tools, as well as all the strategies to organize the team.
+                                </p>
+                            </div>
+                            </div>
+                            
+
+
+                        </div>
+
+
+                    </div>
+
 
                 </div>
             </div>
