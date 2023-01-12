@@ -1,0 +1,21 @@
+.Works{
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 10%;
+}
+
+.Works__title{
+    width: 100%;
+    text-align: center;
+}
+
+.Works__title h2{
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--dark);
+    position: relative;
+    text-shadow: 3px 3px 0px white, 3.5px 3.5px 0px rgb(70, 81, 87,0.3);
+}
