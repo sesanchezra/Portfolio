@@ -1,21 +1,92 @@
-.Works{
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    padding-top: 10%;
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+:root {
+  --grey: rgb(241, 244, 246);
+  --light-grey: rgb(243, 245, 248);
+  --light-dark: rgb(50, 60, 66);
+  --dark: rgb(70, 81, 87);
+  --font: rgb(126, 132, 136);
+  --blue: rgb(16, 143, 228);
+  --light-blue: rgb(58, 162, 232);
+  --header-index: 10;
 }
 
-.Works__title{
-    width: 100%;
-    text-align: center;
+.Works {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 10%;
 }
 
-.Works__title h2{
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--dark);
-    position: relative;
-    text-shadow: 3px 3px 0px white, 3.5px 3.5px 0px rgb(70, 81, 87,0.3);
+.Works__title {
+  width: 100%;
+  text-align: center;
+}
+
+.Works__title h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--dark);
+  position: relative;
+  text-shadow: 3px 3px 0px white, 3.5px 3.5px 0px rgb(70, 81, 87, 0.3);
+}
+
+.Works__controllers {
+  width: 100%;
+  padding: 30px;
+
+  /* Scroll snap*/
+  scroll-snap-type: x mandatory;
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  gap: 20px;
+  scrollbar-width: none;
+}
+
+.Works__controllers__item {
+  /* Scroll snap*/
+  scroll-snap-align: center;
+  flex: 0 0 40%;
+  width: 100%;
+  object-fit: cover;
+
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: var(--font);
+  z-index: 1;
+  background: var(--grey);
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgb(58, 162, 232,0.17);
+  box-shadow: 4px 8px 19px -3px rgb(58, 162, 232,0.17);
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+.Works__controllers__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: var(--blue);
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+.Works__controllers__item:hover {
+  color: #e8e8e8;
+}
+
+.Works__controllers__item:hover::before{
+  width: 100%;
 }
