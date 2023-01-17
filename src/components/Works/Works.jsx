@@ -181,7 +181,7 @@ const Works = () => {
                 {
                     works?.map(work => (
                         <div className='container__card' key={work?.name}>
-                            <div className='card'>
+                            <div className='card' id={`div-${work?.name}`}>
                                 <div className='card__img'>
 
                                 </div>
