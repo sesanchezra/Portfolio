@@ -1,5 +1,9 @@
 import React from 'react'
 import '../Works/Works.css'
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setWorksControllers } from '../../store/slices/worksControllers.slice';
+
 
 // Covers of each project
 import TechShop from '../../assets/TechShop.png'
@@ -15,12 +19,13 @@ import Axios from '../../assets/axios.png'
 import ReactLogo from '../../assets/react.png'
 import Js from '../../assets/js.png'
 import Css from '../../assets/css.png'
+import { useState } from 'react';
 
 const works = [
     {
         name: 'TechShop',
         cover: TechShop,
-        stack:[
+        stack: [
             {
                 title: 'React.js',
                 image: ReactLogo
@@ -57,7 +62,7 @@ const works = [
     {
         name: 'Saine',
         cover: Saine,
-        stack:[
+        stack: [
             {
                 title: 'React.js',
                 image: ReactLogo
@@ -94,7 +99,7 @@ const works = [
     {
         name: 'Pokedex',
         cover: Pokedex,
-        stack:[
+        stack: [
             {
                 title: 'React.js',
                 image: ReactLogo
@@ -120,11 +125,40 @@ const works = [
         link: 'https://pokedex-app-sesanchez.netlify.app/',
         repository: 'https://github.com/sesanchezra/entregable-5'
     }
-    
+
 
 ]
 
 const Works = () => {
+
+
+    const worksControllers = useSelector(state => state.worksControllersSlice)
+    const dispatch = useDispatch();
+
+
+    const toggleController = (name) => {
+        // [
+        //     {
+        //         title: 'TechShop',
+        //         isActive: true
+        //     }
+        // ]
+
+        const setControllers = () => dispatch(setWorksControllers(
+            {
+                title: name,
+                isActive: true
+            }))
+        setControllers()
+        document.getElementById(name).scrollIntoView({
+            behavior: 'smooth'
+        });
+        document.getElementById(`div-${name}`).scrollIntoView({
+            behavior: 'smooth'
+        });
+
+    }
+
     return (
         <div className='Works'>
             <div className='Works__title'>
@@ -133,15 +167,32 @@ const Works = () => {
                 </h2>
             </div>
             <div className='Works__controllers'>
-                <button className='Works__controllers__item'>
-                    TechShop
-                </button>
-                <button className='Works__controllers__item'>
-                    Saine
-                </button>
-                <button className='Works__controllers__item'>
-                    Pokedex
-                </button>
+                {
+                    works?.map(work => (
+                        <button className='Works__controllers__item' key={work?.name} onClick={() => toggleController(work?.name)} id={work?.name}>
+                            {
+                                work?.name
+                            }
+                        </button>
+                    ))
+                }
+            </div>
+            <div className='Works__card'>
+                {
+                    works?.map(work => (
+                        <div className='container__card' key={work?.name}>
+                            <div className='card'>
+                                <div className='card__img'>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    ))
+                }
+
+
+
             </div>
         </div>
     )

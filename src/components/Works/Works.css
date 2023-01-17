@@ -62,8 +62,8 @@
   position: relative;
   font-weight: 1000;
   font-size: 17px;
-  -webkit-box-shadow: 4px 8px 19px -3px rgb(58, 162, 232,0.17);
-  box-shadow: 4px 8px 19px -3px rgb(58, 162, 232,0.17);
+  -webkit-box-shadow: 4px 8px 19px -3px rgb(58, 162, 232, 0.17);
+  box-shadow: 4px 8px 19px -3px rgb(58, 162, 232, 0.17);
   transition: all 250ms;
   overflow: hidden;
 }
@@ -87,6 +87,33 @@
   color: #e8e8e8;
 }
 
-.Works__controllers__item:hover::before{
+.Works__controllers__item:hover::before {
   width: 100%;
+}
+
+.Works__card{
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  width: 100%;
+  scrollbar-width: none;
+  
+}
+
+.container__card{
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 70vh;
+}
+
+.container__card .card{
+  width: 80%;
+  height: 70%;
+  margin-top: 10%;
 }
