@@ -8,6 +8,7 @@
   --blue: rgb(16, 143, 228);
   --light-blue: rgb(58, 162, 232);
   --header-index: 10;
+  --size: 100px;
 }
 
 .Works {
@@ -16,12 +17,13 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  padding-top: 10%;
+  
 }
 
 .Works__title {
   width: 100%;
   text-align: center;
+  height: 5vh;
 }
 
 .Works__title h2 {
@@ -35,6 +37,7 @@
 .Works__controllers {
   width: 100%;
   padding: 30px;
+  height: 120px;
 
   /* Scroll snap*/
   scroll-snap-type: x mandatory;
@@ -96,24 +99,103 @@
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
+  
+  align-items: center;
   width: 100%;
   scrollbar-width: none;
-  
+  height: calc(100vh - 8vh - 5vh - 120px)
 }
 
 .container__card{
   flex: 0 0 100%;
-  scroll-snap-align: center;
+  scroll-snap-align:center;
   width: 100%;
   object-fit: cover;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  height: 70vh;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  height: 80%;
 }
 
-.container__card .card{
+
+
+
+/* ---- CARD ----*/
+/*Magic card*/
+.card {
   width: 80%;
-  height: 70%;
+  height: 100%;
+  background: #f5f5f5;
+  overflow: visible;
+  box-shadow: 4.5px 4.3px 4.8px rgba(0, 0, 0, 0.017),
+    11.6px 11px 11.4px rgba(0, 0, 0, 0.029),
+    23.7px 22.6px 23px rgba(0, 0, 0, 0.04),
+    49px 46.7px 50.4px rgba(0, 0, 0, 0.052),
+    131px 125px 154px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+ 
+ .card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 0 1rem;
+ }
+ 
+ .card-img {
+  width: 70%;
+  aspect-ratio: 1;
+  /* height: var(--size); */
+  border-radius: 30px;
+  transform: translateY(-50%);
+  position: relative;
+  transition: all .3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
 
-}
+ .card-img img {
+   width: 80%;
+   aspect-ratio: 1;
+ }
+ 
+ .card-img::before {
+  content: "";
+  border-radius: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  border: 10px solid #e8e8e8;
+ }
+ 
+ /*Text*/
+ .text-title {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  color: #42caff;
+  letter-spacing: 0.05rem;
+ }
+ 
+ .text-body {
+  font-size: .8em;
+  text-align: center;
+  color: #6f6d78;
+  font-weight: 400;
+  font-style: italic;
+ }
+ 
+ /*Hover*/
+ .card:hover .card-img {
+  width: 75%;
+  aspect-ratio: 1;
+  
+ }

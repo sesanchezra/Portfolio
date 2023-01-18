@@ -181,9 +181,13 @@ const Works = () => {
                 {
                     works?.map(work => (
                         <div className='container__card' key={work?.name}>
-                            <div className='card' id={`div-${work?.name}`}>
-                                <div className='card__img'>
-
+                            <div className="card" id={`div-${work?.name}`}>
+                                <div className="card-img">
+                                    <img src={work?.cover} alt="cover" />
+                                </div>
+                                <div className="card-info">
+                                    <p className="text-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti repellat, consequuntur doloribus voluptate esse iure?</p>
+                                    <p className="text-title">Autor</p>
                                 </div>
                             </div>
                         </div>
