@@ -173,7 +173,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: -10px 10px 20px 0px rgb(58, 162, 232, 0.3);
   padding: 5px;
   position: absolute;
   top: 7%;
@@ -197,7 +196,7 @@
   aspect-ratio: 1;
   perspective: 1000px;
   position: relative;
-  top: -22%;
+  top: -20%;
 }
 
 .flip-card-inner {
