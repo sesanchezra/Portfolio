@@ -6,6 +6,7 @@ import { setWorksControllers } from '../../store/slices/worksControllers.slice';
 import { ScrollingCarousel } from '@trendyol-js/react-carousel';
 import { BsLink45Deg } from "react-icons/bs";
 import { IconContext } from "react-icons";
+import { GiClick } from "react-icons/gi";
 
 
 
@@ -177,7 +178,7 @@ const Works = () => {
             <div className='Works__controllers'>
                 {
                     works?.map(work => (
-                        <button className={`Works__controllers__item ${(worksControllers?.title=== work?.name) ? 'controller__active': 'controller__inactive'}`} key={work?.name} onClick={() => toggleController(work?.name)} id={work?.name}>
+                        <button className={`Works__controllers__item ${(worksControllers?.title === work?.name) ? 'controller__active' : 'controller__inactive'}`} key={work?.name} onClick={() => toggleController(work?.name)} id={work?.name}>
                             {
                                 work?.name
                             }
@@ -196,6 +197,10 @@ const Works = () => {
                                             <div className="card__img" >
                                                 <img src={work?.cover} alt="cover" />
                                             </div>
+                                            <IconContext.Provider value={{ className: "touch__me", color: 'white', width: '0.5em' }}>
+                                                <GiClick />
+                                            </IconContext.Provider>
+
                                         </div>
                                         <div className="flip-card-back">
                                             <div className='card__back'>
