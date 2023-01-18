@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './About.css'
 import Profile from '../../assets/Profile.png'
-import NoCountry from '../../assets/NoCountry.png'
-import IDforIdeas from '../../assets/ID.png'
+import NoCountry from '../../assets/Works/NoCountry.png'
+import IDforIdeas from '../../assets/Works/ID.png'
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 import { ScrollingCarousel } from '@trendyol-js/react-carousel';
 
