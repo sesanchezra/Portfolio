@@ -30,12 +30,70 @@
   position: relative;
   text-shadow: 3px 3px 0px white, 3.5px 3.5px 0px rgb(70, 81, 87, 0.3);
 }
+
+/* ----- Skills controllers -----*/
+
+.skills__controller{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.Works__controllers__item {
+  /* Scroll snap*/
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: var(--font);
+  z-index: 1;
+  background: var(--grey);
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgb(58, 162, 232, 0.17);
+  box-shadow: 4px 8px 19px -3px rgb(58, 162, 232, 0.17);
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+.Works__controllers__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: var(--blue);
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+.Works__controllers__item:hover {
+  color: #e8e8e8;
+}
+
+.Works__controllers__item:hover::before {
+  width: 100%;
+}
+
+.controller__active {
+  background-color: var(--blue);
+  color: white;
+}
+
+/* ------ */
 .stack {
   width: 100%;
-  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 60vh;
 }
 
 .slider {
@@ -45,7 +103,6 @@
   display: flex;
 
   width: 100%;
-  height: 100%;
   scrollbar-width: none;
 }
 .skill__container {
@@ -163,4 +220,36 @@
     left: 12%;
   }
   
+}
+
+.previous__btn, .next__btn{
+  width: 40px;
+  height: 40px;
+  background-color: rgb(58, 162, 232,0.3);
+  border-radius: 25px;
+  border: none;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+
+.previous__btn > svg , .next__btn > svg{
+  width: 35%;
+  object-fit: contain;
+  fill: var(--blue);
+  z-index: 6;
+}
+
+.previous__btn{
+  left: 3%;
+}
+
+.previous__btn > svg{ 
+  transform: rotateY(180deg);
+}
+
+.next__btn{
+  right: 3%;
 }

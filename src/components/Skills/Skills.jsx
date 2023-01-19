@@ -14,31 +14,52 @@ import Css from '../../assets/Stack/css.png'
 const skills = [
     {
         title: 'React.js',
-        image: ReactLogo
+        image: ReactLogo,
+        type: 'Tech Skills'
     },
     {
         title: 'CSS',
-        image: Css
+        image: Css,
+        type: 'Tech Skills'
     },
     {
         title: 'Javascript',
-        image: Js
+        image: Js,
+        type: 'Tech Skills'
     },
     {
         title: 'Axios',
-        image: Axios
+        image: Axios,
+        type: 'Tech Skills'
     },
     {
         title: 'Ajax',
-        image: Ajax
+        image: Ajax,
+        type: 'Tech Skills'
     },
     {
         title: 'React Router Dom',
-        image: Router
+        image: Router,
+        type: 'Tech Skills'
     },
     {
         title: 'Redux.js',
-        image: Redux
+        image: Redux,
+        type: 'Tech Skills'
+    },
+    {
+        title: 'Leadership',
+        image: Redux,
+        type: 'Tech Skills'
+    }
+]
+
+const options = [
+    {
+        title: 'Tech Skills'
+    },
+    {
+        title: 'Soft Skills'
     }
 ]
 
@@ -72,6 +93,20 @@ const Skills = () => {
     }, [currentIndex])
 
     /* -------------- */
+
+    /* ---- Controllers functionality ----------*/
+
+    const [controller, setController] = useState({
+        title: 'Tech Skills'
+    })
+
+    const toggleController = (name) => {
+        setController({
+            title: name
+        })
+    }
+
+    console.log(controller)
     return (
         <div className='Skills' id='Skills'>
             <div className='Skills__title'>
@@ -79,31 +114,46 @@ const Skills = () => {
                     My Skills
                 </h2>
             </div>
+            <div className='skills__controller'>
+                {
+                    options?.map(option => (
+                        <button className={`Works__controllers__item ${(controller?.title === option?.title) ? 'controller__active' : 'controller__inactive'}`} key={option?.title} onClick={() => toggleController(option?.title)}>
+                            {
+                                option?.title
+                            }
+                        </button>
+                    ))
+                }
+
+            </div>
 
             <div className='stack' id='stack'>
-                <button onClick={previousSlide}>
-                    {'<'}
+                <button onClick={previousSlide} className='previous__btn'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
                 </button>
                 <div className='slider'>
                     {
                         skills?.map((skill, index) => (
-                            <div className='skill__container' id={index} key={skill?.title}>
-                                <div className='skill__img'>
-                                    <img src={skill?.image} alt="image" />
+                            skill?.type === controller.title ?
+                                <div className='skill__container' id={index} key={skill?.title}>
+                                    <div className='skill__img'>
+                                        <img src={skill?.image} alt="image" />
 
+                                    </div>
+                                    <div className='skill__content'>
+                                        <h2>{skill?.title}</h2>
+                                        <a href="/#/works" className='projects'>
+                                            Works
+                                        </a>
+                                    </div>
                                 </div>
-                                <div className='skill__content'>
-                                    <h2>{skill?.title}</h2>
-                                    <a href="/#/works" className='projects'>
-                                        Works
-                                    </a>
-                                </div>
-                            </div>
+                                :
+                                <h2>Empty</h2>
                         ))
                     }
                 </div>
-                <button onClick={nextSlide}>
-                    {'>'}
+                <button onClick={nextSlide} className='next__btn'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
                 </button>
             </div>
 
