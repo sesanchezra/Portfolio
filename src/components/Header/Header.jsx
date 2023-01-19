@@ -19,8 +19,6 @@ const Header = () => {
         navigate('/contact')
         toggleMenu()
     }
-
-    console.log(collapseMenu)
     return (
         <div className='Header'>
             <nav className='Header__navbar' >
