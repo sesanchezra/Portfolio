@@ -10,6 +10,10 @@ import Axios from '../../assets/Stack/axios.png'
 import ReactLogo from '../../assets/Stack/react.png'
 import Js from '../../assets/Stack/js.png'
 import Css from '../../assets/Stack/css.png'
+import Leader from '../../assets/Stack/Leader.png'
+import Communicate from '../../assets/Stack/Communicate.png'
+import TeamManagement from '../../assets/Stack/Team-management.png'
+import TeamWork from '../../assets/Stack/Team-work.png'
 
 const skills = [
     {
@@ -46,11 +50,29 @@ const skills = [
         title: 'Redux.js',
         image: Redux,
         type: 'Tech Skills'
-    },
+    }
+]
+
+const softSkills = [
     {
         title: 'Leadership',
-        image: Redux,
-        type: 'Tech Skills'
+        image: Leader,
+        type: 'Soft Skills'
+    },
+    {
+        title: 'Assertive Communication',
+        image: Communicate,
+        type: 'Soft Skills'
+    },
+    {
+        title: 'Team Management',
+        image: TeamManagement,
+        type: 'Soft Skills'
+    },
+    {
+        title: 'Team Work',
+        image: TeamWork,
+        type: 'Soft Skills'
     }
 ]
 
@@ -65,34 +87,7 @@ const options = [
 
 const Skills = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [initial, setInitial] = useState(true)
-
-    /* ---- Funcionality of next - previous buttons ----*/
-
-    const previousSlide = () => {
-        if (currentIndex > 0 && currentIndex < skills?.length) {
-            let newValue = currentIndex - 1
-            setCurrentIndex(newValue)
-        }
-    }
-    const nextSlide = () => {
-        if (currentIndex >= 0 && currentIndex < skills?.length - 1) {
-            let newValue = currentIndex + 1
-            setCurrentIndex(newValue)
-        }
-    }
-
-
-    useEffect(() => {
-        if (currentIndex < skills.length) {
-            document.getElementById(currentIndex).scrollIntoView({
-                behavior: 'smooth',
-                inline: 'center'
-            })
-        }
-    }, [currentIndex])
-
-    /* -------------- */
+    
 
     /* ---- Controllers functionality ----------*/
 
@@ -106,7 +101,33 @@ const Skills = () => {
         })
     }
 
-    console.log(controller)
+    /* ---- Funcionality of next - previous buttons ----*/
+
+    const previousSlide = (array) => {
+        if (currentIndex > 0 && currentIndex < array?.length) {
+            let newValue = currentIndex - 1
+            setCurrentIndex(newValue)
+        }
+    }
+    const nextSlide = (array) => {
+        if (currentIndex >= 0 && currentIndex < array?.length - 1) {
+            let newValue = currentIndex + 1
+            setCurrentIndex(newValue)
+        }
+    }
+
+    useEffect(() => {
+            document.getElementById(currentIndex).scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center'
+            })
+    }, [currentIndex])
+
+    useEffect(() => {
+        setCurrentIndex(0)
+    }, [controller])
+
+    /* -------------- */
     return (
         <div className='Skills' id='Skills'>
             <div className='Skills__title'>
@@ -124,40 +145,62 @@ const Skills = () => {
                         </button>
                     ))
                 }
-
             </div>
 
-            <div className='stack' id='stack'>
-                <button onClick={previousSlide} className='previous__btn'>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
-                </button>
-                <div className='slider'>
-                    {
-                        skills?.map((skill, index) => (
-                            skill?.type === controller.title ?
-                                <div className='skill__container' id={index} key={skill?.title}>
-                                    <div className='skill__img'>
-                                        <img src={skill?.image} alt="image" />
-
+            {
+                (controller?.title === 'Tech Skills') ?
+                    <div className='stack' id='stack'>
+                        <button onClick={() => previousSlide(skills)} className='previous__btn'>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
+                        </button>
+                        <div className='slider'>
+                            {
+                                skills?.map((skill, index) => (
+                                    <div className='skill__container' id={index} key={skill?.title}>
+                                        <div className='skill__img'>
+                                            <img src={skill?.image} alt="image" />
+                                        </div>
+                                        <div className='skill__content'>
+                                            <h2>{skill?.title}</h2>
+                                            <a href="/#/works" className='projects'>
+                                                Works
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div className='skill__content'>
-                                        <h2>{skill?.title}</h2>
-                                        <a href="/#/works" className='projects'>
-                                            Works
-                                        </a>
+                                ))
+                            }
+                        </div>
+                        <button onClick={()=>nextSlide(skills)} className='next__btn'>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
+                        </button>
+                    </div>
+                    :
+                    <div className='stack' id='stack'>
+                        <button onClick={() => previousSlide(softSkills)} className='previous__btn'>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
+                        </button>
+                        <div className='slider'>
+                            {
+                                softSkills?.map((skill, index) => (
+                                    <div className='skill__container' id={index} key={skill?.title}>
+                                        <div className='skill__img'>
+                                            <img src={skill?.image} alt="image" />
+                                        </div>
+                                        <div className='skill__content'>
+                                            <h2>{skill?.title}</h2>
+                                            <a href="/#/works" className='projects'>
+                                                Works
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                :
-                                <h2>Empty</h2>
-                        ))
-                    }
-                </div>
-                <button onClick={nextSlide} className='next__btn'>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
-                </button>
-            </div>
-
-
+                                ))
+                            }
+                        </div>
+                        <button onClick={()=>nextSlide(softSkills)} className='next__btn'>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
+                        </button>
+                    </div>
+            }
         </div>
     )
 }
